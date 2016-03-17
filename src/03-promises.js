@@ -36,16 +36,24 @@
 //   }, 1000);
 // }, 1000);
 
-var wait = new Promise((resolve) => {
-  window.setTimeout(() => {
-    resolve();
-  }, 2000);
-});
+const wait = function(time) {
+  return new Promise((resolve) => {
+    window.setTimeout(() => {
+      resolve();
+    }, time);
+  });
+};
 
-wait.then(() => {
+// Wait for 2000ms and THEN...
+wait(2000).then(() => {
   console.log(`I knew you'd come back for me!!!`);
+
+  // Return a wait of 1000ms
+  return wait(1000);
 }).then(() => {
   console.log(`This dresser should be big enough for the two of us...`);
+
+  // Doesn't return a promise so the next then runs immediately
 }).then(() => {
   console.log(`I froze to death and didn't even get an Oscar!!!`);
 });
