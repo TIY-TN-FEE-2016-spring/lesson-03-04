@@ -1,21 +1,26 @@
 'use strict';
 
 const triggerOn = document.querySelector(`#open-popup`);
-const bodyElement = document.querySelector(`body`);
+const alerts = document.querySelector(`#alerts`);
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * (max - 0)) + 0;
+}
 
 triggerOn.addEventListener(`click`, () => {
-  const popup = document.createElement(`div`);
-  const card = document.createElement(`div`);
+  const alert = document.createElement(`div`);
   const popupContent = document.createElement(`p`);
   const closeButton = document.createElement(`button`);
 
-  popup.appendChild(card);
-  card.appendChild(popupContent);
-  card.appendChild(closeButton);
-  bodyElement.appendChild(popup);
+  alert.appendChild(popupContent);
+  alert.appendChild(closeButton);
+  alerts.appendChild(alert);
+
+  alert.style.backgroundColor =
+    `rgba(${getRandomInt(255)}, ${getRandomInt(255)}, ${getRandomInt(255)}, 0.5)`;
 
   closeButton.addEventListener(`click`, () => {
-    popup.remove();
+    alert.remove();
   });
 
   popupContent.innerText = `I see you like to click things...`;
