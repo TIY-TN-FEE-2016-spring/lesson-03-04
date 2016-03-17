@@ -6,7 +6,7 @@ window.setTimeout(function () {
 
 let shouldTick = true;
 
-window.setInterval(function () {
+function clock() {
   if (shouldTick) {
     console.log(`Tick`);
 
@@ -16,4 +16,9 @@ window.setInterval(function () {
 
   console.log(`Tock`);
   shouldTick = true;
-}, 1000);
+};
+
+// Named functions or variables can be used as callbacks
+window.setInterval(clock, 1000);
+
+clock();
