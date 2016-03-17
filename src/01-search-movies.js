@@ -13,14 +13,14 @@
 function onlyGoodMovies(actor, getMovieNames) {
   // Check if the actor is Nic Cage
   if (actor === `Nic Cage`) {
-    window.alert(`We don't serve your kind in these parts`);
+    console.log(`We don't serve your kind in these parts`);
 
     // Never lookup Nic Cage's movies
     return undefined;
   }
 
   if (actor === `Nicholas Cage`) {
-    window.alert(`Don't you think you're clever?`);
+    console.log(`Don't you think you're clever?`);
 
     return undefined;
   }
