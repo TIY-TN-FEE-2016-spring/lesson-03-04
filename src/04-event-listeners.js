@@ -12,6 +12,10 @@ triggerOn.addEventListener(`click`, () => {
   const popupContent = document.createElement(`p`);
   const closeButton = document.createElement(`button`);
 
+  alert.classList.add(`alert`);
+  popupContent.classList.add(`alert__content`);
+  closeButton.classList.add(`alert__close`);
+
   alert.appendChild(popupContent);
   alert.appendChild(closeButton);
   alerts.appendChild(alert);
